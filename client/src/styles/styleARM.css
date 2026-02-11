@@ -194,7 +194,7 @@ nav ul li a.active {
 /* --- HERO SECTION --- */
 .hero {
     height: 60vh;
-    background-image: url(Images/Bac.webp);
+    background-image: url("/images/Bac.webp");
     background-size: cover;
     background-position: center;
     display: flex;

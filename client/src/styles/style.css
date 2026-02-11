@@ -342,3 +342,35 @@ page-title {
 .product-info li {
     margin-bottom: 8px;
 }
+.searchbar {
+    width: 100%;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.searchbar input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.searchbar button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--primary-green);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+    min-width: 100px;
+}
+
+.searchbar button:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}

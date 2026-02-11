@@ -36,7 +36,6 @@ export default function Header() {
               <li><NavLink to="/bags">Bags</NavLink></li>
               <li><NavLink to="/shoes">Shoes</NavLink></li>
               <li><NavLink to="/balls">Balls</NavLink></li>
-              <li><NavLink to="/services">Services</NavLink></li>
             </ul>
           </li>
 
