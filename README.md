@@ -3,7 +3,7 @@
 ## HOW TO RUN WEBSITE LOCALLY
 
 
-Follow steps below;
+Follow steps below to run wesbite (server will be up and running using render and also use supabase for db)
 
 
 ---
