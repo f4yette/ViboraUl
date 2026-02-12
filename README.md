@@ -3,7 +3,7 @@
 ## HOW TO RUN WEBSITE LOCALLY
 
 
-Follow steps below
+Follow steps below;
 
 
 ---
