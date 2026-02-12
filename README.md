@@ -2,6 +2,8 @@
 
 ## HOW TO RUN WEBSITE LOCALLY
 
+Follow steps below
+
 ## Install Node
 
 Download LTS version:  
