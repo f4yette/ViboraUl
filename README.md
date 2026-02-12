@@ -2,7 +2,12 @@
 
 ## HOW TO RUN WEBSITE LOCALLY
 
+
 Follow steps below
+
+
+---
+
 
 ## Install Node
 
