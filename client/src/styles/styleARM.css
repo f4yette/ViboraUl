@@ -351,3 +351,15 @@ footer {
     border-top: 1px solid var(--card-bg);
     color: #888;
 }
+
+.featured-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+#featured-rackets,
+#featured-balls,
+#featured-sportswear {
+  cursor: pointer;
+}

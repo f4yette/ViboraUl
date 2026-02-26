@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Home() {
   return (
     <>
@@ -17,18 +19,24 @@ export default function Home() {
       </section>
 
       <section id="featured-rackets">
-        <h2>FEATURED RACKETS</h2>
-        <div className="products-container" id="featured-rackets-list"></div>
+        <Link to="/rackets" className="featured-link">
+          <h2>FEATURED RACKETS</h2>
+          <div className="products-container" id="featured-rackets-list"></div>
+        </Link>
       </section>
 
       <section id="featured-balls">
-        <h2>FEATURED BALLS</h2>
-        <div className="products-container" id="featured-balls-list"></div>
+        <Link to="/balls" className="featured-link">
+          <h2>FEATURED BALLS</h2>
+          <div className="products-container" id="featured-balls-list"></div>
+        </Link>
       </section>
 
       <section id="featured-sportswear">
-        <h2>FEATURED SPORTSWEAR</h2>
-        <div className="products-container" id="featured-sportswear-list"></div>
+        <Link to="/sportswear" className="featured-link">
+          <h2>FEATURED SPORTSWEAR</h2>
+          <div className="products-container" id="featured-sportswear-list"></div>
+        </Link>
       </section>
 
       <section id="payment-banner">
@@ -54,7 +62,10 @@ export default function Home() {
             </section>
 
             <section id="klarna-method">
-              <img src="/images/Screenshot 2025-11-24 at 21.17.26.png" alt="Klarna" />
+              <img
+                src="/images/Screenshot 2025-11-24 at 21.17.26.png"
+                alt="Klarna"
+              />
               <h4>BUY NOW PAY LATER</h4>
               <h5>Buy now pay in 30 days</h5>
               <a

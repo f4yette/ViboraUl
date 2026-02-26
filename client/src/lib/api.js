@@ -1,34 +1,54 @@
-const API_BASE = "http://localhost:5000";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
 export function getToken() {
   return localStorage.getItem("token");
 }
 
-export async function apiGet(path, { auth = false } = {}) {
-  const headers = {};
-  if (auth) {
-    const token = getToken();
-    if (token) headers.Authorization = `Bearer ${token}`;
+async function handle(res) {
+  const text = await res.text();
+  let data;
+  try {
+    data = text ? JSON.parse(text) : null;
+  } catch {
+    data = text;
   }
 
-  const res = await fetch(`${API_BASE}${path}`, { headers });
-  if (!res.ok) throw new Error(await res.text());
-  return res.json();
+  if (!res.ok) {
+    throw new Error(data?.message || data?.error || data || "Request failed");
+  }
+  return data;
 }
 
-export async function apiPost(path, body, { auth = false } = {}) {
+function authHeaders(auth) {
   const headers = { "Content-Type": "application/json" };
   if (auth) {
     const token = getToken();
     if (token) headers.Authorization = `Bearer ${token}`;
   }
-
-  const res = await fetch(`${API_BASE}${path}`, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-  });
-
-  if (!res.ok) throw new Error(await res.text());
-  return res.json();
+  return headers;
 }
+
+export const apiGet = (path, opts = {}) =>
+  fetch(`${API_BASE}${path}`, {
+    headers: authHeaders(opts.auth),
+  }).then(handle);
+
+export const apiPost = (path, body, opts = {}) =>
+  fetch(`${API_BASE}${path}`, {
+    method: "POST",
+    headers: authHeaders(opts.auth),
+    body: JSON.stringify(body),
+  }).then(handle);
+
+export const apiPatch = (path, body, opts = {}) =>
+  fetch(`${API_BASE}${path}`, {
+    method: "PATCH",
+    headers: authHeaders(opts.auth),
+    body: JSON.stringify(body),
+  }).then(handle);
+
+export const apiDelete = (path, opts = {}) =>
+  fetch(`${API_BASE}${path}`, {
+    method: "DELETE",
+    headers: authHeaders(opts.auth),
+  }).then(handle);

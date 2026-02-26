@@ -5,8 +5,8 @@ import App from "./App";
 
 import "./styles/style.css";
 import "./styles/style1.css";
-import "./styles/styleARM.css";
 import "./styles/styling.css";
+import "./styles/styleARM.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
