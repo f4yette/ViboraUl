@@ -5,7 +5,7 @@ export default function Sportswear() {
   const navigate = useNavigate();
 
   const CATEGORY_ID = "e6660501-cf7e-11f0-a24b-005056b707be";
-  const API_BASE = "http://localhost:5000";
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);

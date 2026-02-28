@@ -5,7 +5,7 @@ export default function Rackets() {
   const navigate = useNavigate();
 
   const CATEGORY_ID = "352883ba-cd3f-11f0-982a-005056b707be";
-  const API_BASE = "http://localhost:5000";
+  const API_BASE = import.meta.env.VITE_API_URL;
 
   const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);

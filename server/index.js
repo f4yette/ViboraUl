@@ -7,7 +7,7 @@ function requireRouter(path) {
   const router = mod?.default ?? mod;
   if (typeof router !== "function") {
     throw new TypeError(
-      `Route module "${path}" must export an Express router function. Got: ${typeof router}`
+      `Route module "${path}" must export an Express router`
     );
   }
   return router;
@@ -23,7 +23,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "*",
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
@@ -37,7 +37,12 @@ app.use("/api/products", productsRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/contact", contactRoutes);
 
-app.get("/", (req, res) => res.send("Backend is running"));
+app.get("/", (req, res) => {
+  res.status(200).send("Backend is running");
+});
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
